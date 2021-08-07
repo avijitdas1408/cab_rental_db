@@ -1,0 +1,2 @@
+create table transactions( trans_id int(10) PRIMARY KEY, transaction_num varchar(12) UNIQUE, ride_num varchar(10), driver_id int(7),passenger_id int(7),transaction_date date NOT NULL, fare decimal(7,2) NOT NULL);
+create table pay_out(t_id int(10),fare decimal(7,2),driver_fee decimal(7,2), remaining_amount decimal(7,2), CONSTAINT fk_transaction FOREIGN KEY (t_id) REFERENCES transactions(trans_id));
